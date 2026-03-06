@@ -5,10 +5,11 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      local lsp = require("lspconfig")
-      lsp.pyright.setup({})
-      lsp.gopls.setup({})
-      lsp.lua_ls.setup({
+
+      vim.lsp.config("pyright", {})
+      vim.lsp.config("gopls", {})
+
+      vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
             diagnostics = {
@@ -17,6 +18,11 @@ return {
           }
         }
       })
+
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("gopls")
+      vim.lsp.enable("lua_ls")
+
     end,
   },
 }
