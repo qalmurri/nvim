@@ -27,7 +27,7 @@ return {
   },
 }
 
--- bawaan v0.1
+-- v0
 -- return {
 --   {
 --     "nvim-treesitter/nvim-treesitter",
