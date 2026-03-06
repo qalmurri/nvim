@@ -5,10 +5,8 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-
       vim.lsp.config("pyright", {})
       vim.lsp.config("gopls", {})
-
       vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
@@ -18,11 +16,15 @@ return {
           }
         }
       })
+      vim.lsp.config("clangd", {
+          cmd = { "clangd" },
+          filetypes = { "c", "cpp", "objc", "objcpp" },
+      })
 
       vim.lsp.enable("pyright")
       vim.lsp.enable("gopls")
       vim.lsp.enable("lua_ls")
-
+      vim.lsp.enable("clangd")
     end,
   },
 }
