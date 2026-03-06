@@ -1,3 +1,6 @@
 return {
-  { "nvim-tree/nvim-web-devicons", lazy = true },
+  {
+      "nvim-tree/nvim-web-devicons",
+      lazy = true
+  },
 }
