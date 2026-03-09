@@ -1,5 +1,6 @@
 -- sudo pacman -S pyright lua-language-server gopls
 
+-- v1
 return {
   {
     "neovim/nvim-lspconfig",
@@ -17,8 +18,13 @@ return {
         }
       })
       vim.lsp.config("clangd", {
-          cmd = { "clangd" },
-          filetypes = { "c", "cpp", "objc", "objcpp" },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--completion-style=detailed",
+        },
+        filetypes = { "c", "cpp", "objc", "objcpp" },
       })
 
       vim.lsp.enable("pyright")
